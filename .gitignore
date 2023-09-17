@@ -4,7 +4,11 @@ __pycache__/
 *$py.class
 
 result/*
+!result/.gitkeep
+
 model/*
+!model/.gitkeep
+
 report.log
 
 # Pycharm

@@ -16,7 +16,7 @@ The simulation environment was implemented with inspirations derived from the [S
 ## Quick Start
 ### Train
 ```shell
-$ python main.py --map --federated --model --alg --num_agents --tag
+$ python main.py --map --federated --model --alg --num_agents --tag --device
 
 --map: the map name, RBM/RDM
 --federated: whether to use federated learning
@@ -24,10 +24,16 @@ $ python main.py --map --federated --model --alg --num_agents --tag
 --alg: the algorithm name, qmix/iql
 --num_agents: the number of agents, which is equal to the number of workers in federated learning
 --tag: the tag of the experiment
+--device: the device to run the experiment, cpu/cuda
+```
+For example, if you want to train a model-aided FedQMIX on the RDM map with 3 agents, you can run the following command:
+```shell    
+$ python main.py --map=RDM --federated=True --model=True --alg=qmix --num_agents=3 --tag=model_aided_fedqmix
 ```
 ### Evaluate
+If you want to evaluate the above trained model, you can run the following command:
 ```shell
-$ python evaluate.py --map --model --alg --tag --num_agents --evaluate_epoch
+$ python evaluate.py --map=RDM --model=True --alg=qmix --tag=model_aided_fedqmix --num_agents=3 
 ```
 ### Plot
 Once the model training is complete, you can visualize the results using the `Plot.py` script.
