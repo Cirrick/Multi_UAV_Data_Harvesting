@@ -6,7 +6,7 @@ from common.arguments import get_common_args, get_mixer_args
 from Libs.Environments.DataCollection import DataCollection
 
 
-def plot_user(ue_pose, fig_id, color=None, marker='o', marker_size=50):
+def plot_device(ue_pose, fig_id, color=None, marker='o', marker_size=50):
     plt.figure(fig_id)
     plt.scatter(ue_pose[:, 0], ue_pose[:, 1], marker=marker, c=color, s=marker_size,  label='Estimated Device Position', zorder=12)
 
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     if args.map == 'RBM':
         from config.RBM_define import params
     elif args.map == 'RDM':
-        from config.RDM_defines import params
+        from config.RDM_define import params
     else:
         raise Exception("No such map!")
 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         path_estimation = result_dir = args.result_dir + '/' + args.alg + '/' + args.map + args.tag + '/est_device_pos.npy'
         est_device_pos = np.load(path_estimation)
         est_device_pos = np.array([pos.flatten() for pos in est_device_pos[-1]])
-        plot_user(est_device_pos[params['unknown_user_idx']], 10, marker='+', marker_size=50, color='r')
+        plot_device(est_device_pos[params['unknown_device_idx']], 10, marker='+', marker_size=50, color='r')
         
     plt.scatter(uav_start_pose[:, 0], uav_start_pose[:, 1], marker='H', s=150, c='lightgray',
                 label='UAV Start Zone')

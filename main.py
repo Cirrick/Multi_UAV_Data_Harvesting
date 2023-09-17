@@ -12,7 +12,7 @@ def main():
     if args.map == 'RBM':
         from config.RBM_define import params
     elif args.map == 'RDM':
-        from config.RDM_defines import params
+        from config.RDM_define import params
     else:
         raise Exception("No such map!")
 
