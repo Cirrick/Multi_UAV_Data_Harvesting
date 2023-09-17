@@ -39,7 +39,7 @@ $ python evaluate.py --map=RDM --model=True --alg=qmix --tag=model_aided_fedqmix
 Once the model training is complete, you can visualize the results using the `Plot.py` script.
 
 ### Hints
-We also provide an algorithm to improve the model learning performance using kmeans, you can try it by setting `--model=True --sample_method=kmeans`.
+We also provide an algorithm to improve the model learning performance by using k-means algorithm, you can try it by setting `--model=True --sample_method=kmeans`.
 
 ## Reference
 If you find this repository useful, please cite our paper:
