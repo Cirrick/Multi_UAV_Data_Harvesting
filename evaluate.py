@@ -1,3 +1,5 @@
+import numpy as np
+
 from runner import Runner
 import os
 import torch
@@ -16,7 +18,7 @@ def plot_uav(uav_trj, fig_id, color=None, marker='', marker_size=5):
     plt.scatter(uav_trj[:, 0], uav_trj[:, 1], c=color, marker=marker, s=marker_size)
 
 
-ColorMap = ["brown", "orange", "green", "red", "purple", "blue", "pink", "gray", "olive", "cyan", "black"]
+ColorMap = ["brown", "orange", "green", "olive", "purple", "blue", "pink", "gray","red" , "cyan", "black"]
 
 
 if __name__ == '__main__':
@@ -76,7 +78,7 @@ if __name__ == '__main__':
         runner.agents.policy.eval_parameters = list(runner.agents.policy.eval_rnn.parameters())
 
     total_collected_data, episode_rewards, uav_trjs, device_idx, action_record = runner.evaluate()
-    print('Total collected data: {}'.format(total_collected_data / 200000))
+    print('Total collected data: {}'.format(total_collected_data / np.sum(params['data'])))
     device_color_list = [[] for _ in range(args.n_agents)]
 
     for i in range(args.n_agents):

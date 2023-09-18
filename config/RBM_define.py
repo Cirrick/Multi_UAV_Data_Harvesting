@@ -45,7 +45,7 @@ radio_ch_model = SegmentedChannelModel(ch_param)
 uav_height = 60
 bs_height = 30
 
-ColorMap = ["brown", "orange", "green", "red", "purple", "blue", "pink", "gray", "olive", "cyan", "black"]
+ColorMap = ["brown", "orange", "green", "olive", "purple", "blue", "pink", "gray","red" , "cyan", "black"]
 
 device_position = np.array([
     [[20, 200, 0]],
