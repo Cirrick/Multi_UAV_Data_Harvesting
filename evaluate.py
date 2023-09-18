@@ -89,7 +89,7 @@ if __name__ == '__main__':
 
     ax = plot_city_top_view(params['city'], 10, figsize=(8,6), fontsize=12)
     device_position = params['device_position'].copy()
-    unknown_device_position = params['unknown_device_idx']
+    unknown_device_position = device_position[params['unknown_device_idx']]
     unknown_device_position_colors = np.array(params['color'])[params['unknown_device_idx']]
     anchor_nodes = device_position[params['known_device_idx']]
     anchor_nodes_colors = np.array(params['color'])[params['known_device_idx']]
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     plt.scatter(anchor_nodes[:, 0], anchor_nodes[:, 1], marker='^', s=100, c=anchor_nodes_colors, label='Anchor Device Position')
 
     if args.model:
-        path_estimation = result_dir = args.result_dir + '/' + args.alg + '/' + args.map + args.tag + '/est_device_pos.npy'
+        path_estimation = result_dir + '/est_device_pos.npy'
         est_device_pos = np.load(path_estimation)
         est_device_pos = np.array([pos.flatten() for pos in est_device_pos[-1]])
         plot_device(est_device_pos[params['unknown_device_idx']], 10, marker='+', marker_size=50, color='r')
