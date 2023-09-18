@@ -33,7 +33,7 @@ $ python main.py --map=RDM --federated=True --model=True --alg=qmix --n_agents=3
 ### Evaluate
 If you want to evaluate the above trained model, you can run the following command:
 ```shell
-$ python evaluate.py --map=RDM --model=True --alg=qmix --tag=model_aided_fedqmix --num_agents=3 
+$ python evaluate.py --map=RDM --model=True --alg=qmix --tag=model_aided_fedqmix --n_agents=3 
 ```
 ### Plot
 Once the model training is complete, you can visualize the results using the `Plot.py` script.
