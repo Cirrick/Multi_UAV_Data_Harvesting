@@ -200,8 +200,8 @@ class Runner:
         collected_measurements = []
         for idx, device_idx in enumerate(unknown_device_idx):
             est_device_pos[idx], collected_meas = self.env.learning_channel_model.user_localization(self.env.city, user_id=device_idx,
-                                                                                   num_samples=50, num_particles=50,
-                                                                                   num_itr=1,
+                                                                                   num_samples=50, num_particles=300,
+                                                                                   num_itr=5,
                                                                                    user_initial_pos=est_device_pos[idx],
                                                                                    sample_method = self.args.sample_method)
             collected_measurements.append(collected_meas)
