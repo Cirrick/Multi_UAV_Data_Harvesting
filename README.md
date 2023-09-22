@@ -4,6 +4,7 @@ This repository contains the implementation of the paper [Model-aided Federated 
 ## Requirements
 
 - python 3.7.15 or newer
+- numpy 1.21.5 or newer
 - torch 1.12.1 or newer
 - matplotlib 3.5.3 or newer
 - pyswarms 1.3.0 or newer
