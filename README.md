@@ -23,7 +23,7 @@ $ python main.py --map --federated --model --alg --n_agents --tag --total_episod
 --alg: the algorithm name, qmix/iql
 --n_agents: the number of agents, which is equal to the number of workers in federated learning
 --tag: the tag of the experiment
---total_episodes: the total number of episodes
+--total_episodes: the total number of collected episodes
 --device: the device to run the experiment, cpu/cuda
 ```
 For example, if you want to train a model-aided FedQMIX on the RDM map with 3 agents, you can run the following command:
