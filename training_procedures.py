@@ -1,7 +1,7 @@
 from runner import Runner
 from Libs.Environments.DataCollection import DataCollection
 import random, os, json
-from ChannelEstimator import *
+from Libs.ChannelEstimator import *
 
 
 def fl_train(args, params):
