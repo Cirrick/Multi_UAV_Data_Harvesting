@@ -9,14 +9,13 @@ This repository contains the implementation of the paper [Model-aided Federated 
 - pyswarms 1.3.0 or newer
 
 ## Acknowledgement
-The implementation of the QMIX and IQL algorithms was heavily based on [starry-sky6688/marl-algorithms](https://github.com/starry-sky6688/marl-algorithms). 
 
-The simulation environment was implemented with inspirations derived from the [SMAC](https://github.com/oxwhirl/smac).
+We gratefully acknowledge the work [Model-aided Deep Reinforcement Learning for Sample-efficient UAV Trajectory Design in IoT Networks](https://ieeexplore.ieee.org/abstract/document/9685774), which we have expanded upon to accommodate multi-UAV scenarios. Our implementation of the QMIX and IQL algorithms was substantially based on [starry-sky6688/marl-algorithms](https://github.com/starry-sky6688/marl-algorithms). Additionally, our simulation environment design drew inspiration from the [SMAC](https://github.com/oxwhirl/smac).
 
 ## Quick Start
 ### Train
 ```shell
-$ python main.py --map --federated --model --alg --n_agents --tag --device
+$ python main.py --map --federated --model --alg --n_agents --tag --total_episodes --device
 
 --map: the map name, RBM/RDM
 --federated: whether to use federated learning
@@ -24,11 +23,12 @@ $ python main.py --map --federated --model --alg --n_agents --tag --device
 --alg: the algorithm name, qmix/iql
 --n_agents: the number of agents, which is equal to the number of workers in federated learning
 --tag: the tag of the experiment
+--total_episodes: the total number of episodes
 --device: the device to run the experiment, cpu/cuda
 ```
 For example, if you want to train a model-aided FedQMIX on the RDM map with 3 agents, you can run the following command:
 ```shell    
-$ python main.py --map=RDM --federated=True --model=True --alg=qmix --n_agents=3 --tag=model_aided_fedqmix
+$ python main.py --map=RDM --federated=True --model=True --alg=qmix --n_agents=3 --tag=model_aided_fedqmix --total_episodes=30000
 ```
 ### Evaluate
 If you want to evaluate the above trained model, you can run the following command:
