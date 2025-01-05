@@ -37,7 +37,7 @@ def plot_city_top_view(city, fig_id, figsize=(8, 6), fontsize=12):
 
     cax = cm.ScalarMappable(cmap=cmap)
     cax.set_array(bld_height)
-    fcb = fig.colorbar(cax)
+    fcb = fig.colorbar(cax, ax=ax)
     fcb.set_label('Building height [m]', fontsize=fontsize)
 
     plt.xlabel('X-axis [m]', fontsize=fontsize)

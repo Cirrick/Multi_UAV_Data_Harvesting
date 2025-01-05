@@ -77,11 +77,11 @@ class Runner:
             for episode in episodes:
                 for key in episode_batch.keys():
                     episode_batch[key] = np.concatenate((episode_batch[key], episode[key]), axis=0)
-                self.buffer.store_episode(episode_batch)
-                for train_step in range(self.args.train_steps):
-                    mini_batch = self.buffer.sample(min(self.buffer.current_size, self.args.batch_size))
-                    self.agents.train(mini_batch, train_steps)
-                    train_steps += 1
+            self.buffer.store_episode(episode_batch)
+            for train_step in range(self.args.train_steps):
+                mini_batch = self.buffer.sample(min(self.buffer.current_size, self.args.batch_size))
+                self.agents.train(mini_batch, train_steps)
+                train_steps += 1
         np.save(self.save_path + '/training_episode_data_{}', self.training_episode_data)
         np.save(self.save_path + '/training_episode_rewards_{}', self.training_episode_rewards)
         self.agents.policy.save_model()
@@ -141,11 +141,11 @@ class Runner:
             for episode in episodes:
                 for key in episode_batch.keys():
                     episode_batch[key] = np.concatenate((episode_batch[key], episode[key]), axis=0)
-                self.buffer.store_episode(episode_batch)
-                for train_step in range(self.args.train_steps):
-                    mini_batch = self.buffer.sample(min(self.buffer.current_size, self.args.batch_size))
-                    self.agents.train(mini_batch, train_steps)
-                    train_steps += 1
+            self.buffer.store_episode(episode_batch)
+            for train_step in range(self.args.train_steps):
+                mini_batch = self.buffer.sample(min(self.buffer.current_size, self.args.batch_size))
+                self.agents.train(mini_batch, train_steps)
+                train_steps += 1
 
         return train_steps, evaluate_steps, episode_steps, best_episode_data
 

@@ -53,7 +53,7 @@ class RolloutWorker:
                 # generate onehot vector of th action
                 action_onehot = np.zeros(self.args.n_actions)
                 action_onehot[action] = 1
-                actions.append(np.int(action))
+                actions.append(int(action))
                 actions_onehot.append(action_onehot)
                 avail_actions.append(avail_action)
                 last_action[agent_id] = action_onehot
