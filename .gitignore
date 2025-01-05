@@ -11,5 +11,7 @@ model/*
 
 report.log
 
+.vscode/*
+
 # Pycharm
 .idea/
