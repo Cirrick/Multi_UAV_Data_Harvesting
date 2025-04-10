@@ -6,7 +6,7 @@ from training_procedures import fl_train, train
 def main():
 
     args = get_common_args()
-    if args.alg == 'qmix' or arg.alg == 'iql':
+    if args.alg == 'qmix' or args.alg == 'iql':
         args = get_mixer_args(args)
 
     if args.map == 'RBM':
